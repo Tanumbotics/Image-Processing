@@ -1,11 +1,11 @@
-from process_image import import_image_files
+from process_image import read_image_files
 import cv2
 import numpy as np
 import os
 # import matplotlib.pyplot as plt
 
 def compute_vari(images):
-	plant_img = [cv2.imread(img_i) for img_i in images]
+	plant_img = images
 
 	for i in range(2):
 		img = plant_img[i]
@@ -36,13 +36,8 @@ def compute_vari(images):
 		cv2.imwrite(os.path.join(v_export_dir, v_file), VARI)
 
 def main():
-    compute_vari(import_image_files())
+    compute_vari(read_image_files())
 
-def resize_images():
-	'''TODO: Make a function to resize all images in a dir into same size
-	In image processing ML, you need to make sure all imgs are of the same
-	sizes
-	'''
 
 if __name__ == "__main__":
 	main()

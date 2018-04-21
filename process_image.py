@@ -10,5 +10,11 @@ def import_image_files():
     return plants_images
 
 '''Reads images for plotting'''
-def read_image_files(plant_images):
-    return [cv2.imread(img_i) for img_i in plant_images]
+def read_image_files():
+    return [cv2.imread(img_i) for img_i in import_image_files()]
+
+def resize_images():
+	'''TODO: Make a function to resize all images in a dir into same size
+	In image processing ML, you need to make sure all imgs are of the same
+	sizes
+	'''
