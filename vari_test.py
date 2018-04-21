@@ -28,8 +28,8 @@ def compute_vari(images):
         cv2.imwrite(os.path.join(g_export_dir, g_file), g)
         cv2.imwrite(os.path.join(r_export_dir, r_file), r)
 
-        """ VARI formula is green - red	 / green + red - blue
-		    Source:http://www.harrisgeospatial.com/docs/BroadbandGreenness.html
+        """ VARI formula is green - red / green + red - blue
+		    Source: http://www.harrisgeospatial.com/docs/BroadbandGreenness.html
 		"""
         VARI = g - r / g + r - b
         cv2.imwrite(os.path.join(v_export_dir, v_file), VARI)
