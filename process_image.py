@@ -1,11 +1,11 @@
 import os
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import cv2
 
 '''Import images from folder_name that ends with .jpg'''
 def import_image_files():
-    plants_images = [os.path.join(folder_name, img_i)
-					 for img_i in os.listdir(folder_name)
+    plants_images = [os.path.join('plants', img_i)
+					 for img_i in os.listdir('plants')
                      if img_i.endswith('.jpg')]
     return plants_images
 
