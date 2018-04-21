@@ -1,4 +1,4 @@
-from process_image import read_image_files
+from process_image import *
 import cv2
 import numpy as np
 import os
@@ -7,7 +7,7 @@ import os
 def compute_vari(images):
 	plant_img = images
 
-	for i in range(2):
+	for i in range(count_images_in_dir()):
 		img = plant_img[i]
 		b,g,r = cv2.split(img)
 

@@ -2,11 +2,16 @@ import os
 # import matplotlib.pyplot as plt
 import cv2
 
+def count_images_in_dir():
+	return len([img_i
+		        for img_i in os.listdir('plants')
+		        if img_i.endswith('.jpg')])
+
 '''Import images from folder_name that ends with .jpg'''
 def import_image_files():
     plants_images = [os.path.join('plants', img_i)
-					 for img_i in os.listdir('plants')
-                     if img_i.endswith('.jpg')]
+                    for img_i in os.listdir('plants')
+                    if img_i.endswith('.jpg')]
     return plants_images
 
 '''Reads images for plotting'''
