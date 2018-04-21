@@ -4,7 +4,6 @@ import numpy as np
 import os
 # import matplotlib.pyplot as plt
 
-
 def compute_vari(images):
     plant_img = images
 
@@ -29,17 +28,14 @@ def compute_vari(images):
         cv2.imwrite(os.path.join(g_export_dir, g_file), g)
         cv2.imwrite(os.path.join(r_export_dir, r_file), r)
 
-        '''VARI formula is green - red	 / green + red - blue
-		Source:http://www.harrisgeospatial.com/docs/BroadbandGreenness.html
-		To do Merge back: img = cv2.merge((b,g,r))
-		'''
+        """ VARI formula is green - red	 / green + red - blue
+		    Source:http://www.harrisgeospatial.com/docs/BroadbandGreenness.html
+		"""
         VARI = g - r / g + r - b
         cv2.imwrite(os.path.join(v_export_dir, v_file), VARI)
 
-
 def main():
     compute_vari(read_image_files())
-
 
 if __name__ == "__main__":
     main()
