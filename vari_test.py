@@ -7,7 +7,7 @@ import os
 FOLDER_DIR = 'plants'
 
 def main():
-    plant_img = import_image_files(FOLDER_DIR)
+    plant_img = read_image_files(FOLDER_DIR)
 
     for i in range(count_images_in_dir(FOLDER_DIR)):
         img = plant_img[i]
