@@ -4,11 +4,12 @@ import numpy as np
 import os
 # import matplotlib.pyplot as plt
 
+FOLDER_DIR = 'plants'
 
-def compute_vari(images):
-    plant_img = images
+def main():
+    plant_img = import_image_files(FOLDER_DIR)
 
-    for i in range(count_images_in_dir()):
+    for i in range(count_images_in_dir(FOLDER_DIR)):
         img = plant_img[i]
         b, g, r = cv2.split(img)
 
@@ -35,10 +36,6 @@ def compute_vari(images):
 		'''
         VARI = g - r / g + r - b
         cv2.imwrite(os.path.join(v_export_dir, v_file), VARI)
-
-
-def main():
-    compute_vari(read_image_files())
 
 
 if __name__ == "__main__":
