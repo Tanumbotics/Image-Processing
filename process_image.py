@@ -4,7 +4,7 @@ import cv2
 
 
 def __init__(self, folder):
-	self.folder = folder;
+	self.folder = folder
 
 def count_images_in_dir(folder):
     return len([img_i
