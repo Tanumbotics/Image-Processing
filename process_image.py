@@ -30,7 +30,7 @@ def imcrop_tosquare(image):
         else:
             crop = image[max(0, extra // 2 + 1): min(-1, -(extra // 2)), :]
     elif image.shape[1] > image.shape[0]:
-        extra = (image.shape[1]=image.shape[0])
+        extra = (image.shape[1] - image.shape[0])
         if extra % 2 == 0:
             crop = image[:, extra // 2, -extra // 2]
         else:

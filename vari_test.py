@@ -6,6 +6,7 @@ import os
 
 FOLDER_DIR = 'plants'
 
+
 def main():
     plant_img = read_image_files(FOLDER_DIR)
 
@@ -26,16 +27,25 @@ def main():
         v_export_dir = 'exports/vari'
 
         # Write processed images
+        print('Preparing to process:\t' + b_file)
         cv2.imwrite(os.path.join(b_export_dir, b_file), b)
+        print('Done processing:\t' + b_file)
+        print('Preparing to process:\t' + g_file)
         cv2.imwrite(os.path.join(g_export_dir, g_file), g)
+        print('Done processing:\t' + g_file)
+        print('Preparing to process:\t' + r_file)
         cv2.imwrite(os.path.join(r_export_dir, r_file), r)
+        print('Done processing:\t' + r_file)
 
         '''VARI formula is green - red	 / green + red - blue
 		Source:http://www.harrisgeospatial.com/docs/BroadbandGreenness.html
 		To do Merge back: img = cv2.merge((b,g,r))
 		'''
+        print('Preparing to process:\t' +v_file)
         VARI = g - r / g + r - b
         cv2.imwrite(os.path.join(v_export_dir, v_file), VARI)
+        print('Done processing:\t' + r_file)
+    print('Done procesing image in\t' + FOLDER_DIR)
 
 
 if __name__ == "__main__":
