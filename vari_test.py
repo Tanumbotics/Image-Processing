@@ -11,7 +11,7 @@ def main():
     plant_img = read_image_files(FOLDER_DIR)
 
     for i in range(count_images_in_dir(FOLDER_DIR)):
-        img = plant_img[i]
+        img = imcrop_tosquare(plant_img[i])
         b, g, r = cv2.split(img)
 
         # Specify filename for each channel e.g. blue: b_00001.jpg
