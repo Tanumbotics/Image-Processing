@@ -75,10 +75,9 @@ def main():
         cv2.imwrite(os.path.join(g_export_dir, g_file), g)
         cv2.imwrite(os.path.join(r_export_dir, r_file), r)
 
-        """ vari formula is green - red / green + red - blue
-		Source: http://www.harrisgeospatial.com/docs/BroadbandGreenness.html
+        '''Source: http://www.harrisgeospatial.com/docs/BroadbandGreenness.html
         vari = g - r / g + r - b
-        """
+        '''
         vari = np.divide(np.subtract(g, r), np.subtract(np.add(g, r), b))
         cv2.imwrite(os.path.join(va_export_dir, va_file), vari)
         cv2.imwrite(os.path.join(vv_export_dir, vv_file), vvi)
