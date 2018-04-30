@@ -7,7 +7,7 @@ def count_images_in_dir(folder):
                 for img_i in os.listdir(folder)
                 if img_i.endswith('.jpg')])
 
-  
+
 # Import images from folder_name that ends with .jpg
 def import_image_files(folder):
     return [os.path.join(folder, img_i)
