@@ -1,25 +1,39 @@
 import os
 import cv2
-# import matplotlib.pyplot as plt
 
-def count_images_in_dir():
+
+def count_images_in_dir(folder):
     return len([img_i
-                for img_i in os.listdir('plants')
+                for img_i in os.listdir(folder)
                 if img_i.endswith('.jpg')])
 
-def import_image_files():
-    # Import images from folder_name that ends with .jpg
-    plants_images = [os.path.join('plants', img_i)
-                     for img_i in os.listdir('plants')
-                     if img_i.endswith('.jpg')]
-    return plants_images
 
-def read_image_files():
-    # Reads images for plotting
-    return [cv2.imread(img_i) for img_i in import_image_files()]
+# Import images from folder_name that ends with .jpg
+def import_image_files(folder):
+    return [os.path.join(folder, img_i)
+            for img_i in os.listdir(folder)
+            if img_i.endswith('.jpg')]
 
-def resize_images():
-    """TODO: Make a function to resize all images in a dir into same size
-    In image processing ML, you need to make sure all imgs are of the same
-    sizes
-    """
+
+# Reads images for plotting
+def read_image_files(folder):
+    return [cv2.imread(img_i) for img_i in import_image_files(folder)]
+
+
+# Crops images to square
+def imcrop_tosquare(image):
+    if image.shape[0] > image.shape[1]:
+        extra = (image.shape[0] - image.shape[1])
+        if extra % 2 == 0:
+            crop = image[extra // 2: -extra // 2, :]
+        else:
+            crop = image[max(0, extra // 2 + 1): min(-1, -(extra // 2)), :]
+    elif image.shape[1] > image.shape[0]:
+        extra = (image.shape[1] - image.shape[0])
+        if extra % 2 == 0:
+            crop = image[:, extra // 2, -extra // 2]
+        else:
+            crop = image[:, max(0, extra // 2 + 1): min(-1, -(extra // 2))]
+    else:
+        crop = image
+    return crop
