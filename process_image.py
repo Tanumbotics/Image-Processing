@@ -2,7 +2,7 @@ import os
 import cv2
 
 
-def count_images_in_dir():
+def count_images_in_dir(folder):
     return len([img_i
                 for img_i in os.listdir(folder)
                 if img_i.endswith('.jpg')])
