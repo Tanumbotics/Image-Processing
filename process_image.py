@@ -1,14 +1,13 @@
 import os
-# import matplotlib.pyplot as plt
 import cv2
 
-# Count number of '.jpg' files in a dir
-def count_images_in_dir(folder):
+
+def count_images_in_dir():
     return len([img_i
                 for img_i in os.listdir(folder)
                 if img_i.endswith('.jpg')])
 
-
+  
 # Import images from folder_name that ends with .jpg
 def import_image_files(folder):
     return [os.path.join(folder, img_i)
