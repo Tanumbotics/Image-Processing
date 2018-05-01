@@ -12,7 +12,7 @@ def makevari(image, count):
     # Specify filename for each channel e.g. blue: b_00001.jpg
     vari_file = "vari_" + str (count) + ".jpg"
 
-    # Folder Directory 
+    # Folder Directory
     exportspath = os.path.join(os.path.dirname(__file__), "exports", "vari")
 
     # Write processed images

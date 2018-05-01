@@ -11,7 +11,7 @@ def splitchannel(image, count):
     g_file = "g_" + str (count) + ".jpg"
     r_file = "r_" + str (count) + ".jpg"
 
-    # Folder Directory 
+    # Folder Directory
     exportspath = os.path.join(os.path.dirname(__file__), "exports")
     b_export_dir = os.path.join(exportspath, "blue_channel")
     g_export_dir = os.path.join(exportspath, "green_channel")
