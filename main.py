@@ -1,7 +1,6 @@
-import cv2
-import numpy as np
+#import cv2
+#import numpy as np
 import os
-import sys
 import channelsplit as cs
 import vari
 

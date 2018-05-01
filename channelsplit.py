@@ -1,5 +1,5 @@
 import cv2
-import numpy as np
+#import numpy as np
 import os
 
 def splitchannel(image, count):
@@ -16,7 +16,7 @@ def splitchannel(image, count):
     b_export_dir = os.path.join(exportspath, "blue_channel")
     g_export_dir = os.path.join(exportspath, "green_channel")
     r_export_dir = os.path.join(exportspath, "red_channel")
-    
+
     # Write processed images
     # Todo use os.makedirs(path, exist_ok=true) to premade folder in case there is no folder
     cv2.imwrite(os.path.join(b_export_dir, b_file), b)
