@@ -6,11 +6,13 @@ import vari
 
 filepath = os.path.join(os.path.dirname(__file__), 'plants')
 
+
 def list_files():
     listoffile = []
     for file in os.listdir(filepath):
         listoffile.append(file)
     return listoffile
+
 
 def main():
     filecount = 1
@@ -20,6 +22,6 @@ def main():
         vari.makevari(os.path.join(filepath, file), filecount)
         filecount = filecount + 1
 
+
 if __name__ == "__main__":
     main()
-
